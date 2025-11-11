@@ -1,0 +1,8 @@
+.idea
+venv
+.env
+__pycache__
+staticfiles
+media
+debug.log
+tg_bot/migrations
