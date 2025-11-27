@@ -1,0 +1,27 @@
+<!-- templates/admin/tg_bot/telegramuser/change_list.html -->
+{% extends "admin/change_list.html" %}
+{% load static %}
+
+{% block content_title %}
+<div style="margin-bottom: 30px;">
+    <div class="stats-container">
+        <div class="stat-card total">
+            <div class="stat-number">{{ stats.total }}</div>
+            <div class="stat-label">Jami foydalanuvchilar</div>
+        </div>
+        <div class="stat-card active">
+            <div class="stat-number">{{ stats.active }}</div>
+            <div class="stat-label">Faol</div>
+        </div>
+        <div class="stat-card inactive">
+            <div class="stat-number">{{ stats.inactive }}</div>
+            <div class="stat-label">Nofaol</div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extrahead %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'admin/css/telegram_user_admin.css' %}">
+{% endblock %}

@@ -282,4 +282,9 @@ LOGGING = {
             'level': 'DEBUG',
         },
     },
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',
+    },
 }
+
