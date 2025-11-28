@@ -116,12 +116,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
-LANGUAGE_CODE = 'uz-uz'
-
+LANGUAGE_CODE = 'uz-uz'  # или 'ru-ru'
 TIME_ZONE = 'Asia/Tashkent'
-
 USE_I18N = True
-
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
@@ -287,4 +284,3 @@ LOGGING = {
         'level': 'DEBUG',
     },
 }
-
