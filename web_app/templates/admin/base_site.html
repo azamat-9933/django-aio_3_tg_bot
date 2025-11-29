@@ -1,0 +1,56 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'admin/css/custom_admin.css' %}">
+    <style>
+        /* Inline critical styles */
+        #header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        }
+
+        #branding h1 {
+            color: white !important;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        #branding h1 a:link,
+        #branding h1 a:visited {
+            color: white;
+        }
+
+        .module h2, .module caption, .inline-group h2 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+    </style>
+{% endblock %}
+
+{% block title %}{{ title }} | Kitobxona Admin{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
+        <span style="font-size: 32px;">📚</span>
+        <span>Kitobxona Boshqaruv Paneli</span>
+    </a>
+</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block userlinks %}
+    {{ block.super }}
+{% endblock %}
+
+{% block welcome-msg %}
+    <strong>
+        {% if user.first_name %}
+            Xush kelibsiz, {{ user.first_name }}! 👋
+        {% else %}
+            Xush kelibsiz, {{ user.username }}! 👋
+        {% endif %}
+    </strong>
+{% endblock %}

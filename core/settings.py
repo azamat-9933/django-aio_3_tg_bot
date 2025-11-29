@@ -64,14 +64,14 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'core.urls'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  # Agar custom template kerak bo'lsa
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
@@ -125,12 +125,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+# 3. Static fayllar sozlamasi
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
-    BASE_DIR / 'staticfiles'
+    BASE_DIR / 'static',
 ]
 
+# Media fayllar (rasm, video va h.k.)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
@@ -285,3 +287,24 @@ LOGGING = {
         'level': 'DEBUG',
     },
 }
+
+
+# Admin panelda ko'rsatiladigan obyektlar soni
+ADMIN_LIST_PER_PAGE = 25
+
+# Admin panelda avtomatik to'ldiriladigan maydonlar
+PREPOPULATED_FIELDS = {'slug': ('name',)}
+
+# ============================================================================
+# FILE UPLOAD SETTINGS
+# ============================================================================
+
+# Maksimal yuklash hajmi (100MB)
+DATA_UPLOAD_MAX_MEMORY_SIZE = 104857600  # 100MB
+FILE_UPLOAD_MAX_MEMORY_SIZE = 104857600  # 100MB
+
+# Ruxsat berilgan rasm formatlari
+ALLOWED_IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'webp']
+
+# Rasm o'lchamlari
+IMAGE_MAX_SIZE = 5 * 1024 * 1024  # 5MB
