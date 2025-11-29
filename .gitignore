@@ -6,3 +6,4 @@ staticfiles
 media
 debug.log
 tg_bot/migrations
+web_app/migrations

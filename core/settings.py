@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'tg_bot',
+    'web_app',
 
     'rest_framework',
     'rest_framework.authtoken',
